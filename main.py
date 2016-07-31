@@ -11,10 +11,14 @@ def main():
         firstFolder = getAllImageHashes(sys.argv[1])
         secondFolder = getAllImageHashes(sys.argv[2])
         printDifferences(firstFolder, secondFolder)
-
-    if len(sys.argv) == 2:
+    else if len(sys.argv) == 2:
         folder = getAllImageHashes(sys.argv[1])
         printDifferences(folder, None)
+    else:
+        print("Improper arguments given")
+        print("")
+        print("Usage:")
+        print("main.py <folder1> [folder2]")
 
 def printDifferences(folder1, folder2):
     matchFound = False
